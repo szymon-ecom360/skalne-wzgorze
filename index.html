@@ -171,6 +171,12 @@ a.sb.l:hover{transform:rotate(0deg) translateX(-5px)}
 .rlist li{display:grid;grid-template-columns:12em minmax(0,1fr);gap:16px;padding:12px 0;border-bottom:1px solid var(--line)}
 .rlist li b{font-weight:600}
 
+/* mobile booking bar */
+.mbar{display:none;position:fixed;left:0;right:0;bottom:0;z-index:30;grid-template-columns:1fr 1fr;gap:8px;padding:10px 12px calc(10px + env(safe-area-inset-bottom,0px));background:rgba(18,20,23,.96);border-top:1px solid #2c2d30}
+.mbar a{display:flex;align-items:center;justify-content:center;min-height:48px;border-radius:2px;font:600 16px/1 Barlow,sans-serif;text-decoration:none;white-space:nowrap}
+.mbar .c{background:var(--gold);color:#1d1c1e}
+.mbar .b{border:1.5px solid #cbb48a;color:#f2efe9}
+
 /* reels */
 .reels{background:var(--night);color:#ece8e1}
 .reels .lead{color:#b5bbc1;margin:0}
@@ -234,12 +240,17 @@ dialog img{max-height:82vh;width:auto;margin:0 auto;border-radius:2px}
 }
 @media(min-width:981px){.postwrap{display:contents}}
 @media(max-width:600px){
-body{font-size:16px}
+body{font-size:16px;padding-bottom:72px}
+.score{flex-wrap:wrap;gap:6px 12px}
+.score span{flex-basis:100%;max-width:none}
+.mbar{display:grid}
 .rgrid{grid-template-columns:repeat(2,minmax(0,1fr))}
 .hl{display:flex;overflow-x:auto;justify-content:flex-start;gap:16px;padding:6px 2px 4px;scroll-snap-type:x mandatory}
 .hl a{flex:none;scroll-snap-align:start}
 .hl i{width:70px;font-size:10.5px}
 .sb .time{display:none}
+.sign .sb .time{display:block;align-self:center;padding:0 8px 0 2px;font-weight:700;font-size:15px}
+.sign .sb .dest{padding:8px 4px 8px 8px;font-size:15px}
 .sb .tip{width:34px}
 .sb .org{width:30px}
 .sb.r{--cp:polygon(0 0,calc(100% - 26px) 0,100% 50%,calc(100% - 26px) 100%,0 100%)}
@@ -424,6 +435,8 @@ body{font-size:16px}
     </div>
   </div>
 </section>
+
+<nav class="mbar" aria-label="Szybka rezerwacja"><a class="c" href="tel:+48453538038">Zadzwoń</a><a class="b" href="https://www.booking.com/hotel/pl/skalne-wzgorze-dom-w-gorach.pl.html">Booking.com</a></nav>
 
 <footer>
   <span>© 2026 Skalne Wzgórze. Całoroczny dom w górach, Zabrzeż i Ochotnica Dolna.</span>
